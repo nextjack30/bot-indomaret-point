@@ -88,7 +88,8 @@ $phone = trim(fgets($input_hp));
 $phone = "\"$phone\"";
 /////////////////////////////////
 
-$idhp = base_convert(microtime(false), 16, 36);
+$idhp = preg_replace( '/[^0-9]/', '', microtime(false));
+base_convert($cleanNumber, 10, 36);
 $idhp = "\"$idhp\"";
 ////////////////////////////////
 $data_login = '{"deviceId":'.$idhp.',"phoneNumber":'.$phone.'}';
