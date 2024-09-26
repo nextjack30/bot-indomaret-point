@@ -89,7 +89,7 @@ $phone = "\"$phone\"";
 /////////////////////////////////
 
 $idhp = preg_replace( '/[^0-9]/', '', microtime(false));
-base_convert($cleanNumber, 10, 36);
+base_convert($idhp, 10, 36);
 $idhp = "\"$idhp\"";
 ////////////////////////////////
 $data_login = '{"deviceId":'.$idhp.',"phoneNumber":'.$phone.'}';
